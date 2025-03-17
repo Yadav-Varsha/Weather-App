@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container py-4">
+    <div class="row d-flex align-items-center justify-content-between top-bar mb-3">
+      <div class="button1 col-12 col-md-2 mb-2 mb-md-0">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div class="search d-flex col-12 col-md-8">
+        <input type="text" class="form-control ms-3" id="search-input" placeholder="Search for your preferred city...">
+        <button class="btn btn-outline-success ms-3" id="search-button" type="submit">Search</button>
+      </div>
+      <div class="button col-12 col-md-2 text-center mt-2 mt-md-0">
+        <button class="btn btn-success ms-3 btn-location" id="current-location-btn"><i class="fa-solid fa-location-crosshairs"></i>Current Location</button>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <!-- Location and Time Card -->
+      <div class="col-12 col-md-4 mb-3 mt-2">
+        <div class="time-card text-center p-3 bg-secondary text-white shadow">
+          <h2 id="city-name">Athens</h2>
+          <h1 id="current-time">09:03</h1>
+          <p id="current-date" class="dat">Thursday, 31 Aug</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-1 mt-5 d-none d-md-block"></div>
+
+      <!-- Weather Card -->
+      <div class="col-12 col-md-7 mt-2">
+        <div class="weather-card bg-secondary text-white shadow">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <h2 class="fw-bold" id="temperature">24&deg;C</h2>
+              <p id="feels-like">Feels like: 22&deg;C</p>
+              <p id="sunrise"><i class="fas fa-arrow-up"></i> Sunrise: 06:37 AM</p>
+              <p id="sunset"><i class="fas fa-arrow-down"></i> Sunset: 08:37 PM</p>
+            </div>
+            <div class="col-6 text-center">
+              <img id="weather-icon" src="" alt="Weather Icon" class="weather-img" width="100">
+              <h4 id="weather-desc">Sunny</h4>
+            </div>
+          </div>
+          <hr class="my-3">
+
+          <div class="row text-center">
+            <div class="col-6 col-md-3">
+              <p><i class="fas fa-water"></i> <span id="humidity">41%</span></p>
+              <p>Humidity</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <p><i class="fas fa-wind"></i> <span id="wind-speed">2km/h</span></p>
+              <p>Wind Speed</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <p><i class="fas fa-tachometer-alt"></i> <span id="pressure">997hPa</span></p>
+              <p>Pressure</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <p><i class="fas fa-sun"></i> <span id="uv-index">8</span></p>
+              <p>UV Index</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-2 align-items-start">
+      <!-- 5 Days Forecast -->
+      <div class="col-12 col-md-4 p-1">
+        <div class="forecast-card p-2 bg-secondary text-white shadow">
+          <h4 class="mb-3">5 Days Forecast:</h4>
+          <ul class="list-unstyled" id="five-day-forecast">
+            <li class="forecast-item"><span class="emoji"></span> <span class="temp">20&deg;C</span> <span
+                class="date">Friday, 1 Sep</span></li>
+            <li class="forecast-item"><span class="emoji"></span> <span class="temp">22&deg;C</span> <span
+                class="date">Saturday, 2 Sep</span></li>
+            <li class="forecast-item"><span class="emoji"></span> <span class="temp">27&deg;C</span> <span
+                class="date">Sunday, 3 Sep</span></li>
+            <li class="forecast-item"><span class="emoji"></span> <span class="temp">18&deg;C</span> <span
+                class="date">Monday, 4 Sep</span></li>
+            <li class="forecast-item"><span class="emoji"></span> <span class="temp">16&deg;C</span> <span
+                class="date">Tuesday, 5 Sep</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hourly Forecast -->
+      <div class="col-12 col-md-8">
+        <div class="hourly-card bg-secondary text-white shadow">
+          <h4 class="mb-2 text-center">Hourly Forecast:</h4>
+          <div class="d-flex flex-wrap" id="hourly-forecast">
+            <div class="hourly-box text-center">
+              <p class="mt-5">12:00</p>
+               <span class="emoji mt-4"></span>
+                <p class="mt-3" >26&deg;C</p>
+                <img src="Wind.png" alt="Wind Speed" width="20">
+                <p class="mt-4">3 km/h</p>
+            </div>
+            <div class="hourly-box text-center">
+              <p class="mt-5">15:00</p>
+               <span class="emoji mt-4"></span>
+                <p class="mt-3">27&deg;C</p>
+                <img src="Wind.png" alt="Wind Speed" width="20">
+                 <p class="mt-4">2 km/h</p>
+            </div>
+            <div class="hourly-box text-center">
+              <p class="mt-5">18:00</p>
+               <span class="emoji mt-4"></span>
+                <p class="mt-3">27&deg;C</p>
+                <img src="Wind.png" alt="Wind Speed" width="20">
+                 <p class="mt-4">2 km/h</p>
+            </div>
+            <div class="hourly-box text-center">
+              <p class="mt-5">21:00</p>
+               <span class="emoji mt-4"></span>
+                <p class="mt-3">25&deg;C</p>
+                <img src="Wind.png" alt="Wind Speed" width="20">
+                 <p class="mt-4">3 km/h</p>
+            </div>
+            <div class="hourly-box text-center">
+              <p class="mt-5">00:00</p>
+               <span class="emoji mt-4"></span>
+                <p class="mt-3">22&deg;C</p>
+                <img src="Wind.png" alt="Wind Speed" width="20">
+                 <p class="mt-4">3 km/h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const checkbox = document.getElementById("checkbox")
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark")
+    })
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
