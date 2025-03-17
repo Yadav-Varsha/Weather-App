@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+/*  Support me if you like it */
+.support {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover{
+  transform: scale(1.1);
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.fa-solid{
+  color: black;
+  padding:0px;
+  margin-right:5px;
+}
+
+
+
+.btn-location{
+  border-radius:30px;
+}
+
+.time-card{
+  margin-top: 30px;
+  border-radius: 15px;
+  height:300px;
+  width:510px;
+}
+
+.shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 2rem;
+  padding:10px;
+}
+
+h1 {
+  font-size: 3rem;
+  padding:10px;
+}
+.dat{
+  padding: 10px;
+}
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.weather-card {
+  margin-top: 30px;
+  border-radius: 15px;
+  height: 300px;
+  width:780px;
+}
+
+.shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+
+.forecast-card {
+  border-radius: 15px;
+  background: #6c757d;
+  color: white;
+  padding: 15px;
+  height:330px;
+ 
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.forecast-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  padding: 5px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width:100%;
+}
+.forecast-item img {
+  width: 35px; /* Reduce icon size */
+  height: 35px;
+  margin-right: 5px;
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+
+.temp {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1rem;
+  flex-grow: 1;
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .forecast-item {
+    flex-direction: column;
+    padding: 10px;
+  } 
+  .temp {
+      font-size: 1rem;
+  }
+  .date {
+      font-size: 0.9rem;
+  }
+}
+@media (max-width: 992px) {
+  .forecast-item{
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+.hourly-card{
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  height:330px;
+  width:850px;
+  margin-left:8px;
+ 
+}
+#hourly-forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribute items evenly */
+  width: 100%;
+  padding: 10px; /* Add padding for better spacing */
+  margin: 0 auto;
+  gap: 20px; /* Adjust gap between items */
+}
+
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.hourly-box {
+  background: #333;
+  border-radius: 10px;
+  width: 100px;  /* Fixed width */
+  height: 250px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+ margin-left: 30px;
+ padding: 10px; /* Added padding for content */
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ }
+
+
+.hourly-box img {
+  max-width: 70px; /* Reduce icon size */
+  height: auto;
+  margin: 3px auto;
+}
+.hourly-box p {
+  font-size: 0.75rem; /* Reduce text size */
+  margin: 2px 0; /* Reduce spacing */
+}
+
+.emoji {
+  font-size: 1.8rem;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .hourly-box {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+   .hourly-box {
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .hourly-box {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+#hourly-forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribute items evenly */
+  width: 100%;
+  padding: 10px; /* Add padding for better spacing */
+  margin: 0 auto;
+  gap: 20px; /* Adjust gap between items */
+}
+
