@@ -16,11 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchWeather("Athens");
 
   // Fetch weather using geolocation
-  document.getElementById("checkbox").addEventListener("change", function () {
-    if (this.checked) {
-      getLocationWeather();
-    }
+  document.getElementById("current-location-btn").addEventListener("click", () => {
+    getLocationWeather();
   });
+  
 });
 
 async function fetchWeather(city) {
